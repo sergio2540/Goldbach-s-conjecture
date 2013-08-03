@@ -1,3 +1,9 @@
+//Every even integer greater than 2 
+//can be expressed as the sum of two primes
+//https://en.wikipedia.org/wiki/Goldbach%27s_conjecture
+
+function primeSum(n){
+
 var prime = [];
 
 function isPrime(n){
@@ -18,13 +24,11 @@ function isPrime(n){
 	return true;
 }
 
-function prime_sum(n){
-
 if(n%2 !== 0)
 	return false;
 
 var solution = [];
-var p = 3;
+var p = 3; 
 while(n-p > 0){
  if (isPrime(p) && isPrime(n-p)){
  	solution.push(p)
@@ -35,21 +39,3 @@ while(n-p > 0){
  p +=2;
 }
 }
-
-var fs = require('fs');
-
-var n = Math.pow(10,17);
-
-fs.appendFileSync("p","[ 3");
-
-var p = 5;
-while(n-p > 0){
-fs.appendFileSync("p",", "+p)
-p += 2;
-}
-
-
-
-
-//console.log(isPrime(5));
-//console.log(prime_sum(Math.pow(10,15)*10+16));
